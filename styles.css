@@ -1,0 +1,240 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: white;
+    --button-bg: #4CAF50;
+    --button-hover-bg: #45a049;
+    --canvas-bg: #f8f8f8;
+    --button-text-color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#game-canvas {
+    border: 2px solid var(--text-color);
+    background-color: var(--canvas-bg);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#start-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+}
+
+#start-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --container-bg: #1e1e1e;
+    --button-bg: #3e8e41;
+    --button-hover-bg: #367636;
+    --canvas-bg: #2a2a2a; /* Dark grey */
+}
+
+body.dark-mode h1 {
+    color: white;
+}
+
+body.dark-mode #game-canvas {
+    background-color: #2a2a2a; /* Dark grey */
+}
+
+.arrow-keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.arrow-keys button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.arrow-keys button:hover {
+    background-color: #ccc;
+}
+
+#up-btn {
+    grid-column: 2;
+    grid-row: 1;
+    display: none;
+}
+
+#left-btn {
+    grid-column: 1;
+    grid-row: 2;
+    display: none;
+}
+
+#down-btn {
+    grid-column: 2;
+    grid-row: 2;
+    display: none;
+}
+
+#right-btn {
+    grid-column: 3;
+    grid-row: 2;
+    display: none;
+}
+
+/* From Uiverse.io by Madflows */ 
+.toggle-switch-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.switch-label {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background-color: var(--button-bg);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 2px solid var(--button-bg);
+    transition: background-color 0.3s;
+}
+
+.checkbox {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: var(--button-bg);
+    transition: background-color 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+    transform: translateX(25px);
+}
+
+.checkbox:checked ~ .slider {
+    background-color: var(--button-hover-bg);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 100px;
+    height: 20px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+  }
+  
+  .switch-label {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+  }
+  
+  .checkbox {
+    position: absolute;
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .checkbox:checked ~ .slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .checkbox:checked ~ .slider::before {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
